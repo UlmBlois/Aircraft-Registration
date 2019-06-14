@@ -8,6 +8,8 @@ class RegistrationNumber:
         self.number = number
         if len(number) > 0:
             self.validator = Validator.fromNumber(number)
+        else:
+            raise ValueError("Empty registration number.")
 
     def is_valid(self):
         return self.validator.validate(self.number)
