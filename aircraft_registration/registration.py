@@ -4,6 +4,8 @@ from .data import PATTERNS_DICT
 
 
 class RegistrationNumber:
+    """Given a registration code, extract the associate validator and validate it."""
+
     def __init__(self, number=''):
         self.number = number
         if len(number) > 0:
@@ -12,10 +14,16 @@ class RegistrationNumber:
             raise ValueError("Empty registration number.")
 
     def is_valid(self):
+        """Test if the registration code is valid.
+
+        ie: match one of the patterns of the prefix."""
         return self.validator.validate(self.number)
 
 
 class Validator:
+    """Helper class extrating the prefix of a registration code"""
+    """and validate it against his associate patterns."""
+
     def __init__(self, prefix='', patterns=[]):
         self.prefix = prefix
         self.patterns = patterns
@@ -41,7 +49,10 @@ class Validator:
 
     @staticmethod
     def pattern_to_str(pattern):
-        alpha = '[A-Za-z]'
+        """Convert the given regex pattern into a string representation.
+
+        ex: 'J[A-Za-z][A-Za-z][A-Za-z]$' -> 'Jabc'"""
+        alpha = re.compile(r'\[A-Za-z\]|\[a-zA-Z\]')
         num = '[0-9]'
         alpha_count = ord('a')
         num_count = 1
@@ -50,7 +61,7 @@ class Validator:
         pattern = pattern.replace('$', '')
         while has_num or has_alpha:
             if has_alpha:
-                tmp_str = pattern.replace(alpha, chr(alpha_count), 1)
+                tmp_str = alpha.sub(chr(alpha_count), pattern,  1)
                 if tmp_str == pattern:
                     has_alpha = False
                 else:

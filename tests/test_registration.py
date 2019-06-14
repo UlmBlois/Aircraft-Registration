@@ -32,6 +32,7 @@ class RegistrationNumberTest(unittest.TestCase):
         self.valid_number = 'B-HZE'
         self.invalid_prefix = 'ZZ-H12'
         self.invalid_number = 'F-J111'
+        self.abstract_pattern = 'O[0-9][a-zA-Z][0-9][A-Za-z]$'
 
     def test_constructor(self):
         try:
@@ -45,3 +46,8 @@ class RegistrationNumberTest(unittest.TestCase):
         self.assertTrue(reg_num.is_valid())
         reg_num = RegistrationNumber(self.invalid_number)
         self.assertFalse(reg_num.is_valid())
+
+    def test_pattern_to_str(self):
+        self.assertEqual(
+            Validator.pattern_to_str(self.abstract_pattern),
+            'O1a2b')
