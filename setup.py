@@ -17,7 +17,7 @@ DESCRIPTION = 'Simple international aircraft registration code validator'
 URL = 'https://github.com/UlmBlois/Aircraft-Registration'
 EMAIL = 'nicolas.serrette@outlook.fr'
 AUTHOR = 'Serrette Nicolas'
-REQUIRES_PYTHON = '>=3.7.0'
+REQUIRES_PYTHON = '>=3.4.0'
 VERSION = '0.1.0'
 
 # What packages are required for this module to be executed?
@@ -120,9 +120,10 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: Implementation :: CPython',
-        'Programming Language :: Python :: Implementation :: PyPy'
     ],
     # $ setup.py publish support.
     cmdclass={
