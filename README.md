@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/UlmBlois/Aircraft-Registration.svg?branch=master)](https://travis-ci.org/UlmBlois/Aircraft-Registration)
+[![Coverage Status](https://coveralls.io/repos/github/UlmBlois/Aircraft-Registration/badge.svg?branch=master)](https://coveralls.io/github/UlmBlois/Aircraft-Registration?branch=master)
 
 # Aircraft-Registration
 
