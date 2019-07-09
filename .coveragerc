@@ -1,0 +1,15 @@
+[run]
+branch = true
+omit =
+    */tests/*
+    */__init__.py
+    setup.py
+source = .
+
+[report]
+show_missing = true
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    def __str__
+    def __unicode__
