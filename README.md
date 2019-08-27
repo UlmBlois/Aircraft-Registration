@@ -10,7 +10,7 @@ Simple international aircraft registration code validator.
 ```python
 from aircraft_registration.registration import RegistrationNumber
 
-code = ResgistratonNumber('F-JABC')
+code = RegistrationNumber('F-JABC')
 
 code.is_valid()
 
@@ -18,4 +18,5 @@ code.is_valid()
 
 ## TODO
 
+* get country code from prefix
 * extract aircraft type (microlight, glider, militarily, ...) when possible; ie: when they can be differentiate by a code pattern

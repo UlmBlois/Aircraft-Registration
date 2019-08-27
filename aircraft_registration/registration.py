@@ -38,7 +38,10 @@ class Validator:
                     key_max_size = len(key)
                     key_best_match = key
         if not key_best_match:
-            raise ValueError("Cannot match registration number prefix with any know prefix.")
+            raise ValueError(
+                ('Cannot match registration number '
+                 '"{}" with any know prefix.'.format(number)
+                 ))
         return cls(key_best_match, PATTERNS_DICT[key_best_match])
 
     def validate(self, number):
